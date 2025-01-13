@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
     default: "Nextjs-Seo",
-    template: "%s - Nextjs Seo"
+    template: "%s - Nextjs Seo",
   },
   description: "Search Engine Optimization with Nextjs.",
   twitter: {
-    card: "summary_large_image"
-  }
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -19,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import github from "/public/github.png";
 
 export default function Footer() {
   return (
@@ -20,13 +22,17 @@ export default function Footer() {
           Terms of service
         </Link>
       </div>
-      <p className="text-center">
+      <div className="text-center flex justify-center itesm-center gap-2 p-3 text-xs sm:text-base md:text-xl">
         &copy;{" "}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-pink-500">
           Next seo;
         </span>{" "}
         {new Date().getFullYear()}
-      </p>
+        <Link className="flex items-center gap-2" href="https://github.com/StevenMODIMO/next-seo" target="_blank">
+          <p className="text-gray-500 font-semibold">Source code:</p>
+          <Image src={github} alt="github" width={20} height={20} />
+        </Link>
+      </div>
     </div>
   );
 }
